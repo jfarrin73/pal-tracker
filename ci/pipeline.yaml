@@ -23,7 +23,7 @@ jobs:
 
             service postgresql start
 
-            sudo -u postgres psql -f database/tracker/create_database.sql
+            sudo -u postgres psql -f databases/tracker/create_databases.sql
             flyway -url="jdbc:postgresql://localhost:5432/tracker_test" -locations=filesystem:databases/tracker migrate -user=tracker -password=password
 
             ./gradlew test
